@@ -1,11 +1,22 @@
 import { pool } from "../db.js";
 
-export const getTasks = (req, res) => {
-  res.send("obteniendo tareas");
+export const getTasks = async (req, res) => {
+  const [result] = await pool.query(
+    "SELECT * FROM tasks ORDER BY createAt ASC"
+  );
+  console.log(result);
+  res.json(result);
 };
 
-export const getTask = (req, res) => {
-  res.send("obteniendo una tarea");
+export const getTask = async (req, res) => {
+  const [result] = await pool.query("SELECT * FROM tasks WHERE id = ?", [
+    req.params.id,
+  ]);
+
+  if (result.length == 0)
+    return res.status(404).json({ message: "Task not found" });
+
+  res.json(result[0]);
 };
 
 export const createTask = async (req, res) => {
