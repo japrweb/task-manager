@@ -3,8 +3,7 @@ import { getTasksRequest } from "../api/tasks.api";
 import TaskCard from "../components/TaskCard";
 
 function TasksPage() {
-
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     async function loadTasks() {
@@ -14,15 +13,15 @@ function TasksPage() {
     loadTasks();
   }, []);
 
+  function renderMain() {
+    if (tasks.length === 0) return <h2>No tasks yet</h2>;
+    return tasks.map((task) => <TaskCard task={task} key={task.id} />);
+  }
+
   return (
     <div>
       <h1>Tasks</h1>
-
-      {
-        tasks.map(task => (
-          <TaskCard task={task} key={task.id} />
-        ))
-      }
+      {renderMain()}
     </div>
   );
 }
