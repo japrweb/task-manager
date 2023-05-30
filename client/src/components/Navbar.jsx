@@ -10,7 +10,7 @@ function Navbar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/taskform">Create task</Link>
+          <Link to="/new">Create task</Link>
         </li>
       </ul>
     </div>

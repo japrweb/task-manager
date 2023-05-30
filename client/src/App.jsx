@@ -13,7 +13,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<TasksPage />} />
-        <Route path="/taskform" element={<TaskForm />} />
+        <Route path="/new" element={<TaskForm />} />
+        <Route path="/edit/:id" element={<TaskForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </TaskContextProvider>
