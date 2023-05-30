@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/japrweb/task-manager#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.3.2"
