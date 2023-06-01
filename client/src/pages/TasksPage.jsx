@@ -17,7 +17,7 @@ function TasksPage() {
   return (
     <div>
       <h1 className="text-5xl text-white font-bold text-center mb-4">Tasks</h1>
-      <div className="grid grid-cols-3 gap-2">{renderMain()}</div>
+      <div className="grid lg:grid-cols-3 lg:gap-2 md:grid-cols-2 md:gap-2 grid-cols-1 gap-3">{renderMain()}</div>
     </div>
   );
 }

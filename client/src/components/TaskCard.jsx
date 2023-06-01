@@ -17,7 +17,7 @@ function TaskCard({ task }) {
       </header>
       <p className="text-xs">{task.description}</p>
       <span>{task.createAt}</span>
-      <div className="flex justify-between pt-2">
+      <div className="flex justify-end gap-x-2 pt-2">
         <button
           className="bg-slate-300 px-2 py-1 text-zinc-800 text-sm font-semibold rounded-lg duration-700 transition-all hover:bg-slate-800 hover:text-white hover:duration-700 hover:transition-all"
           onClick={() => deleteTask(task.id)}

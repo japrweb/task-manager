@@ -9,7 +9,7 @@ import { TaskContextProvider } from "./context/TaskProvider";
 
 function App() {
   return (
-    <div className="bg-zinc-900 h-screen ">
+    <div className="bg-zinc-900 md:h-screen ">
       <Navbar />
       <div className="container mx-auto py-4 px-10">
         <TaskContextProvider>
