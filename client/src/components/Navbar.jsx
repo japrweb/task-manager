@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="bg-neutral-700 flex justify-between px-20 py-4">
+    <div className="bg-neutral-700 flex justify-between md:px-16 px-10 py-4">
       <Link to={"/"} className="text-white font-bold">
         <h1>React MySQL</h1>
       </Link>
