@@ -28,19 +28,17 @@ function TaskForm() {
 
   return (
     <div>
-      <h1>{params.id ? "Edit Task" : "New Task"}</h1>
       <Formik
         initialValues={task}
         enableReinitialize={true}
         onSubmit={async (values, actions) => {
           console.log(values);
-
           if (params.id) {
             await updateTask(params.id, values);
-            navigate("/");
           } else {
             await createTask(values);
           }
+          navigate("/");
           setTask({
             title: "",
             description: "",
@@ -48,25 +46,41 @@ function TaskForm() {
         }}
       >
         {({ handleChange, handleSubmit, values, isSubmitting }) => (
-          <Form onSubmit={handleSubmit}>
-            <label>title</label>
+          <Form
+            onSubmit={handleSubmit}
+            className="bg-zinc-300 max-w-md rounded-md p-4 mx-auto mt-10"
+          >
+            <h1 className="text-xl font-bold uppercase text-center">
+              {params.id ? "Edit Task" : "New Task"}
+            </h1>
+            <label className="block font-semibold text-zinc-800 text-md mt-2">
+              Title
+            </label>
             <input
               type="text"
               name="title"
               placeholder="Write a title"
+              className="px-2 py-1 rounded-sm w-full"
               onChange={handleChange}
               value={values.title}
             />
 
-            <label>description</label>
+            <label className="block font-semibold text-zinc-800 text-md mt-2">
+              Description
+            </label>
             <textarea
               name="description"
               rows="3"
               placeholder="Write a description"
+              className="px-2 py-1 rounded-sm w-full"
               onChange={handleChange}
               value={values.description}
             ></textarea>
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="block bg-indigo-600 px-2 py-1 rounded-md text-md text-white font-semibold mt-1 w-full hover:bg-indigo-800 duration-700 transition-all hover:duration-700 hover:transition-all"
+            >
               {isSubmitting ? "Saving..." : "Save"}
             </button>
           </Form>
