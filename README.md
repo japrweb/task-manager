@@ -1,5 +1,5 @@
 # Task Manager
 
-Node.js project integrating PayPal's REST API.
+Task manager CRUD app using MERN stack & MySQL
 
-This is an logic based on the original Project "Paypal & Node REST API" created by Fazt. Original README [here](https://github.com/fazt/nodejs-paypal-restapi)
+This is an app based on the original Project "MERN Stack con MySQL" created by Fazt. Original README [here](https://github.com/fazt/mern-mysql-crud)
